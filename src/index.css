@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GrubHub Flow Design System - Food Delivery App */
+
+@layer base {
+  :root {
+    /* Core brand colors - warm and appetizing */
+    --background: 0 0% 100%;
+    --foreground: 18 14% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 18 14% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 18 14% 15%;
+
+    /* Primary - vibrant orange for food delivery */
+    --primary: 25 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 100% 70%;
+
+    /* Secondary - fresh green for healthy options */
+    --secondary: 142 69% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - warm neutral tones */
+    --muted: 30 20% 96%;
+    --muted-foreground: 18 14% 50%;
+
+    /* Accent - warm red for favorites and deals */
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 90%;
+    --input: 30 15% 94%;
+    --ring: 25 100% 55%;
+
+    /* Custom design tokens for food delivery */
+    --hero-gradient: linear-gradient(135deg, hsl(25 100% 55%), hsl(0 84% 60%));
+    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(30 20% 98%));
+    --success: 142 69% 58%;
+    --warning: 45 100% 60%;
+    --info: 217 91% 60%;
+    
+    /* Shadows with brand colors */
+    --shadow-brand: 0 10px 40px -10px hsl(25 100% 55% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(18 14% 15% / 0.1);
+    --shadow-glow: 0 0 30px hsl(25 100% 70% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .card-gradient {
+    background: var(--card-gradient);
+  }
+  
+  .shadow-brand {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .food-card {
+    @apply bg-card rounded-lg shadow-card border border-border/50 overflow-hidden hover:shadow-brand transition-smooth;
+  }
+  
+  .restaurant-card {
+    @apply food-card hover:scale-[1.02] cursor-pointer;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
